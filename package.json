@@ -12,12 +12,13 @@
         "build:all": "npm run build",
         "check": "biome check package.json biome.json README.md docs",
         "check:all": "biome check .",
-        "ci": "npm run check && npm run test && npm run build",
+        "ci": "npm run check && npm run test:mock-static-site && npm run test && npm run build",
         "format": "biome format --write package.json biome.json README.md docs",
         "format:all": "biome format --write .",
         "lint": "biome lint package.json biome.json README.md docs",
         "lint:all": "biome lint .",
         "test": "npm run test --workspaces --if-present",
+        "test:mock-static-site": "node mock-static-site/scripts/check-static-site.mjs",
         "test:all": "npm run test"
     },
     "devDependencies": {

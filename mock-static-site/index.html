@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JUI Static Smoke Site</title>
+        <link rel="stylesheet" href="./styles/site.css">
+        <link id="jui-ui-theme" rel="stylesheet" href="./assets/jui/jui-ui.classic.css">
+        <link id="jui-grid-theme" rel="stylesheet" href="./assets/jui/jui-grid.classic.css">
+        <script>
+            window.__juiSmokeAssetErrors = [];
+            window.__juiSmokeRuntimeErrors = [];
+            window.addEventListener("error", function(event) {
+                window.__juiSmokeRuntimeErrors.push(event.message || "unknown error");
+            });
+            window.addEventListener("unhandledrejection", function(event) {
+                window.__juiSmokeRuntimeErrors.push(String(event.reason || "unknown rejection"));
+            });
+            window.__juiSmokeAssetError = function(path) {
+                window.__juiSmokeAssetErrors.push(path);
+            };
+        </script>
+        <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script defer src="./assets/jui/jui-core.js" onerror="window.__juiSmokeAssetError('assets/jui/jui-core.js')"></script>
+        <script defer src="./assets/jui/jui-ui.js" onerror="window.__juiSmokeAssetError('assets/jui/jui-ui.js')"></script>
+        <script defer src="./assets/jui/jui-grid.js" onerror="window.__juiSmokeAssetError('assets/jui/jui-grid.js')"></script>
+        <script defer src="./assets/jui/jui-chart.js" onerror="window.__juiSmokeAssetError('assets/jui/jui-chart.js')"></script>
+        <script defer src="./assets/jui/vue-graph.js" onerror="window.__juiSmokeAssetError('assets/jui/vue-graph.js')"></script>
+        <script defer src="./src/fixtures.js"></script>
+        <script defer src="./src/theme-toggle.js"></script>
+        <script defer src="./src/smoke.js"></script>
+    </head>
+    <body class="jui">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">External Consumer Smoke Site</p>
+                <h1>JUI 빌드 산출물 정적 검증</h1>
+            </div>
+            <div class="toolbar">
+                <label for="theme-select">Theme</label>
+                <select id="theme-select" data-theme-select>
+                    <option value="classic">classic</option>
+                    <option value="dark">dark</option>
+                </select>
+                <button type="button" data-smoke-rerun>Run Smoke</button>
+            </div>
+        </header>
+
+        <main data-smoke-root>
+            <section class="summary" data-smoke-summary>
+                <div class="summary-item">
+                    <span class="summary-label">PASS</span>
+                    <strong data-smoke-count="pass">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">WARN</span>
+                    <strong data-smoke-count="warn">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">FAIL</span>
+                    <strong data-smoke-count="fail">0</strong>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Smoke Results</h2>
+                <div class="result-list" data-smoke-results></div>
+            </section>
+
+            <section class="grid-layout">
+                <article class="panel">
+                    <h2>Core</h2>
+                    <dl class="probe-list">
+                        <dt>Global</dt>
+                        <dd data-probe="core-global">대기 중</dd>
+                        <dt>Utilities</dt>
+                        <dd data-probe="core-utils">대기 중</dd>
+                    </dl>
+                </article>
+
+                <article class="panel">
+                    <h2>UI Components</h2>
+                    <div class="component-row">
+                        <button class="btn" type="button" data-ui-button>Button</button>
+                        <label class="checkbox"><input type="checkbox" checked> Checkbox</label>
+                        <select class="input" data-ui-native-select>
+                            <option>Alpha</option>
+                            <option>Beta</option>
+                        </select>
+                    </div>
+                    <div id="smoke-dropdown" class="dropdown large">
+                        <ul>
+                            <li value="1">Dropdown 1</li>
+                            <li value="2">Dropdown 2</li>
+                        </ul>
+                    </div>
+                    <div id="smoke-tab" class="tab top">
+                        <ul>
+                            <li class="active"><a href="#tab-a">Tab A</a></li>
+                            <li><a href="#tab-b">Tab B</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="panel wide">
+                    <h2>Grid</h2>
+                    <table id="smoke-table" class="table classic">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <script data-jui="#smoke-table" data-tpl="row" type="text/template">
+                        <tr>
+                            <td><!= id !></td>
+                            <td><!= name !></td>
+                            <td><!= status !></td>
+                            <td><!= value !></td>
+                        </tr>
+                    </script>
+                </article>
+
+                <article class="panel wide">
+                    <h2>Chart</h2>
+                    <div id="smoke-chart" class="chart-host"></div>
+                </article>
+
+                <article class="panel">
+                    <h2>Vue Graph</h2>
+                    <div id="smoke-vue-graph" class="placeholder">Vue Graph 로딩 상태 확인 영역</div>
+                </article>
+
+                <article class="panel">
+                    <h2>Assets</h2>
+                    <ul data-asset-results class="asset-list"></ul>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
