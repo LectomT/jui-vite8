@@ -1,0 +1,70 @@
+{
+  "name": "juijs-chart",
+  "version": "2.6.12",
+  "sideEffects": false,
+  "description": "SVG-based JUI chart that can be used in the browser and Node.js. Support many types of charts. (Dashboard, Map, Topology, Full 3D)",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --config vite.config.mjs",
+    "dist": "vite build --config vite.config.mjs",
+    "test": "vitest run --config vite.config.mjs --passWithNoTests"
+  },
+  "main": "src/main.js",
+  "files": [
+    "bundles",
+    "dist",
+    "examples",
+    "images",
+    "src",
+    "test",
+    "package.json",
+    "README.md",
+    "vite.config.mjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juijs/jui-chart.git"
+  },
+  "keywords": [
+    "HTML5",
+    "NodeJS",
+    "CSS",
+    "JS",
+    "JavaScript",
+    "SVG",
+    "Chart",
+    "Framework",
+    "Web development",
+    "free",
+    "MIT"
+  ],
+  "author": "seogi1004",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juijs/jui-chart/issues"
+  },
+  "categories": [
+    "Frameworks",
+    "UI"
+  ],
+  "maintainers": [
+    {
+      "name": "Alvin",
+      "email": "alvin@jennifersoft.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Jayden",
+      "email": "jayden@jennifersoft.com"
+    },
+    {
+      "name": "Yoha",
+      "email": "yoha@jennifersoft.com"
+    }
+  ],
+  "dependencies": {
+    "juijs-graph": "1.1.4"
+  },
+  "devDependencies": {}
+}

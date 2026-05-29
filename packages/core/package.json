@@ -1,0 +1,67 @@
+{
+  "name": "juijs",
+  "version": "2.3.0",
+  "sideEffects": false,
+  "description": "The core framework provided by the JUI for implementing such a grid and chart.",
+  "scripts": {
+    "test": "vitest run --config vite.config.mjs test",
+    "dist": "vite build --config vite.config.mjs"
+  },
+  "main": "dist/jui-core.cjs.js",
+  "module": "dist/jui-core.esm.js",
+  "files": [
+    "dist",
+    "examples",
+    "src",
+    "test",
+    "package.json",
+    "README.md",
+    ".gitignore"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juijs/jui-core.git"
+  },
+  "keywords": [
+    "HTML5",
+    "NodeJS",
+    "CSS",
+    "JS",
+    "JavaScript",
+    "SVG",
+    "Chart",
+    "Framework",
+    "Web Development",
+    "free",
+    "MIT"
+  ],
+  "author": "seogi1004",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juijs/jui-core/issues"
+  },
+  "categories": [
+    "Frameworks",
+    "UI"
+  ],
+  "maintainers": [
+    {
+      "name": "Alvin",
+      "email": "alvin@jennifersoft.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Jayden",
+      "email": "jayden@jennifersoft.com"
+    },
+    {
+      "name": "Yoha",
+      "email": "yoha@jennifersoft.com"
+    }
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {}
+}

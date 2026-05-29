@@ -1,0 +1,35 @@
+{
+    "name": "jui-modern",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Monorepo workspace for modernizing the JUI package family.",
+    "license": "MIT",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "npm run dist --workspaces --if-present",
+        "build:all": "npm run build",
+        "check": "biome check package.json biome.json README.md docs",
+        "check:all": "biome check .",
+        "ci": "npm run check && npm run test && npm run build",
+        "format": "biome format --write package.json biome.json README.md docs",
+        "format:all": "biome format --write .",
+        "lint": "biome lint package.json biome.json README.md docs",
+        "lint:all": "biome lint .",
+        "test": "npm run test --workspaces --if-present",
+        "test:all": "npm run test"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.4.16",
+        "@vue/test-utils": "1.3.6",
+        "jsdom": "29.1.1",
+        "less": "4.6.4",
+        "vite": "8.0.14",
+        "vitest": "4.1.7",
+        "vue-template-compiler": "2.7.16"
+    },
+    "engines": {
+        "node": ">=22"
+    }
+}

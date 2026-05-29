@@ -1,0 +1,45 @@
+{
+  "name": "vue-graph",
+  "productionName": "Vue Graph",
+  "version": "0.8.7",
+  "description": "A library that provides various visualization elements for Vue.js",
+  "main": "src/main.js",
+  "files": [
+    "bundles",
+    "dist",
+    "examples",
+    "images",
+    "src",
+    "package.json",
+    "README.md",
+    "vite.config.mjs"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --config vite.config.mjs",
+    "dist": "npm run test && vite build --config vite.config.mjs",
+    "test": "vitest run --config vite.config.mjs"
+  },
+  "keywords": [
+    "vue",
+    "vue-graph",
+    "jui",
+    "svg",
+    "canvas",
+    "chart",
+    "component",
+    "data-visualization"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juijs/vue-graph.git"
+  },
+  "homepage": "https://github.com/juijs/vue-graph",
+  "author": "alvin.h <seogi777@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "juijs-chart": "file:../chart",
+    "vue": "^2.6.7"
+  }
+}

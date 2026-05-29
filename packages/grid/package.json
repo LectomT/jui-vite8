@@ -1,0 +1,74 @@
+{
+  "name": "juijs-grid",
+  "version": "2.4.5",
+  "sideEffects": false,
+  "description": "JUI grid can handle millions of data, and can display the data in a hierarchical structure.",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --config vite.config.mjs",
+    "dist": "npm run dist:classic && npm run dist:dark",
+    "dist:classic": "vite build --config vite.config.mjs --mode classic",
+    "dist:dark": "vite build --config vite.config.mjs --mode dark",
+    "test": "vitest run --config vite.config.mjs --passWithNoTests"
+  },
+  "main": "src/main.js",
+  "files": [
+    "dist",
+    "examples",
+    "images",
+    "src",
+    "test",
+    "package.json",
+    "README.md",
+    "vite.config.mjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juijs/jui-grid.git"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS",
+    "JS",
+    "JavaScript",
+    "SVG",
+    "Grid",
+    "Framework",
+    "bootstrap",
+    "Web Development",
+    "free",
+    "MIT"
+  ],
+  "author": "seogi1004",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juijs/jui-grid/issues"
+  },
+  "categories": [
+    "Frameworks",
+    "UI"
+  ],
+  "maintainers": [
+    {
+      "name": "Alvin",
+      "email": "alvin@jennifersoft.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Jayden",
+      "email": "jayden@jennifersoft.com"
+    },
+    {
+      "name": "Yoha",
+      "email": "yoha@jennifersoft.com"
+    }
+  ],
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "lodash.throttle": "^4.1.1",
+    "juijs": "file:../core",
+    "juijs-ui": "file:../ui"
+  },
+  "devDependencies": {}
+}

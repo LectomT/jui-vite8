@@ -1,0 +1,15 @@
+node_modules/
+coverage/
+dist/
+.vite/
+out/
+
+# 기존 패키지 Git 저장소의 로컬 백업.
+.legacy-git/
+.legacy-node_modules/
+
+# 이 환경의 로컬 에이전트 및 대체 Git 메타데이터.
+.agents/
+.codex/
+.serena/
+.monorepo.git/
